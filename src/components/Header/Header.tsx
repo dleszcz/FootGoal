@@ -18,7 +18,7 @@ const Header: React.FC<IHeader> = ({toggleDarkMode}) => {
 
   return (
     <View style={[styles.container, containerStyles]}>
-      <Text style={[styles.title, textStyles]}>Header</Text>
+      <Text style={[styles.title, textStyles]}>-</Text>
       <Switch value={isDarkMode} onValueChange={toggleDarkMode} />
     </View>
   );
