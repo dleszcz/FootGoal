@@ -1,5 +1,6 @@
-import React from 'react';
-import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
+import React, {useContext} from 'react';
+import {Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
+import ThemeContext from '../../contexts/theme.context';
 
 interface IListItem {
   title: string;
@@ -7,10 +8,16 @@ interface IListItem {
 }
 
 const ListItem: React.FC<IListItem> = props => {
-  console.log('props', props);
+  const {isDarkMode} = useContext(ThemeContext);
+
+  const titleStyles = {
+    backgroundColor: isDarkMode ? '#000' : '#fff',
+    color: isDarkMode ? '#fff' : '#000',
+  };
+
   return (
     <TouchableOpacity>
-      <Text style={styles.title}>{props.title}</Text>
+      <Text style={[styles.title, titleStyles]}>{props.title}</Text>
       <Image style={styles.thumbnail} source={{uri: props.thumbnail}} />
     </TouchableOpacity>
   );

@@ -3,7 +3,6 @@ import {View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {VideosActions, selectVideosItems} from '../../modules/videos';
 import List from '../List/List';
-import Header from '../Header/Header';
 
 const Videos: React.FC = () => {
   const dispatch = useDispatch();
@@ -15,7 +14,6 @@ const Videos: React.FC = () => {
 
   return (
     <View>
-      <Header />
       <List items={videos} />
     </View>
   );

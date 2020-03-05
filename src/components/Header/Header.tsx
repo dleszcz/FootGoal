@@ -1,10 +1,25 @@
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import React, {useState, useContext} from 'react';
+import {View, Text, StyleSheet, Switch} from 'react-native';
+import ThemeContext from '../../contexts/theme.context';
 
-const Header: React.FC = () => {
+interface IHeader {
+  toggleDarkMode: void;
+}
+
+const Header: React.FC<IHeader> = ({toggleDarkMode}) => {
+  const {isDarkMode} = useContext(ThemeContext);
+  const containerStyles = {
+    backgroundColor: isDarkMode ? '#000' : '#fff',
+  };
+
+  const textStyles = {
+    color: isDarkMode ? '#fff' : '#000',
+  };
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Header</Text>
+    <View style={[styles.container, containerStyles]}>
+      <Text style={[styles.title, textStyles]}>Header</Text>
+      <Switch value={isDarkMode} onValueChange={toggleDarkMode} />
     </View>
   );
 };
@@ -12,6 +27,8 @@ const Header: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 15,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   title: {
     textAlign: 'center',

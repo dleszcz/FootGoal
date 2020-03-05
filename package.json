@@ -13,6 +13,7 @@
     "connected-react-router": "^6.7.0",
     "react": "16.9.0",
     "react-native": "0.61.5",
+    "react-native-dark-mode": "^0.2.2",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
     "redux-saga": "^1.1.3",
