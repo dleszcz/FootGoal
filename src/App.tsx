@@ -1,11 +1,14 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, ScrollView, View, Text} from 'react-native';
+import {Provider} from 'react-redux';
 import List from './components/List/List';
 import Header from './components/Header/Header';
+import {store} from './modules/store';
 
 const App: React.FC = () => {
+  console.log('App store', store);
   return (
-    <>
+    <Provider store={store}>
       <SafeAreaView>
         <ScrollView contentInsetAdjustmentBehavior="automatic">
           <View>
@@ -20,7 +23,7 @@ const App: React.FC = () => {
           </View>
         </ScrollView>
       </SafeAreaView>
-    </>
+    </Provider>
   );
 };
 
