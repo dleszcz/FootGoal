@@ -1,12 +1,23 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
 const Header: React.FC = () => {
   return (
-    <View>
-      <Text>Header</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Header</Text>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 15,
+  },
+  title: {
+    textAlign: 'center',
+    fontSize: 24,
+    textTransform: 'uppercase',
+  },
+});
 
 export default Header;

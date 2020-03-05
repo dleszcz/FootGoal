@@ -2,14 +2,14 @@ import {put, takeEvery} from 'redux-saga/effects';
 
 import {VideosActions, VideosTypes} from './videos.redux';
 
+const FETCH_URL = 'https://www.scorebat.com/video-api/v1/';
+
 export function* fetchVideos() {
   try {
-    const fetchedVideosMock = [
-      {id: 1, name: 'video 1'},
-      {id: 2, name: 'video 2'},
-    ];
+    const response = yield fetch(FETCH_URL);
+    const videos = yield response.json();
 
-    yield put(VideosActions.fetchVideosSuccess(fetchedVideosMock));
+    yield put(VideosActions.fetchVideosSuccess(videos));
   } catch (e) {
     console.log('Fetch videos error', e);
   }
