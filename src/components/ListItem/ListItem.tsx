@@ -18,7 +18,7 @@ const ListItem: React.FC<IListItem> = props => {
   };
 
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('VideoDetails', {title: props.title})}>
+    <TouchableOpacity onPress={() => navigation.navigate('VideoDetails', {...props})}>
       <Text style={[styles.title, titleStyles]}>{props.title}</Text>
       <Image style={styles.thumbnail} source={{uri: props.thumbnail}} />
     </TouchableOpacity>
