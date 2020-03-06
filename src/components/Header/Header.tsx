@@ -1,20 +1,13 @@
 import React, {useState, useContext} from 'react';
 import {View, Text, StyleSheet, Switch} from 'react-native';
-import ThemeContext from '../../contexts/theme.context';
+import ThemeContext from '../../contexts/Theme.context';
 
 interface IHeader {
   toggleDarkMode: void;
 }
 
 const Header: React.FC<IHeader> = ({toggleDarkMode}) => {
-  const {isDarkMode} = useContext(ThemeContext);
-  const containerStyles = {
-    backgroundColor: isDarkMode ? '#000' : '#fff',
-  };
-
-  const textStyles = {
-    color: isDarkMode ? '#fff' : '#000',
-  };
+  const {textStyles, containerStyles} = useContext(ThemeContext);
 
   return (
     <View style={[styles.container, containerStyles]}>

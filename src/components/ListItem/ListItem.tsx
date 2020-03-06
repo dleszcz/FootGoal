@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import ThemeContext from '../../contexts/theme.context';
+import ThemeContext from '../../contexts/Theme.context';
 
 interface IListItem {
   title: string;

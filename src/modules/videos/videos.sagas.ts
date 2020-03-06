@@ -1,5 +1,5 @@
 import {put, takeEvery} from 'redux-saga/effects';
-import {VideosActions, VideosTypes} from './videos.redux';
+import {VideosActions, VideosTypes} from './Videos.redux';
 
 const FETCH_URL = 'https://www.scorebat.com/video-api/v1/';
 

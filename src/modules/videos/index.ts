@@ -1,2 +1,2 @@
-export {VideosTypes, VideosActions} from './videos.redux';
-export * from './videos.selectors';
+export {VideosTypes, VideosActions} from './Videos.redux';
+export * from './Videos.selectors';

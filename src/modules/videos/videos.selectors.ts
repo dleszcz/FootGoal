@@ -1,5 +1,5 @@
 import {createSelector} from 'reselect';
-import {IVideosItems, IVideosModule} from './videos.redux';
+import {IVideosItems, IVideosModule} from './Videos.redux';
 
 export const selectVideosDomain = (state: IVideosModule) => ({...state.videos});
 
