@@ -1,5 +1,5 @@
 import React, {useContext, useRef} from 'react';
-import {Text, View, FlatList, StyleSheet, Dimensions} from 'react-native';
+import {Text, View, FlatList, StyleSheet} from 'react-native';
 import {WebView} from 'react-native-webview';
 import ThemeContext from '../contexts/Theme.context';
 
@@ -10,7 +10,7 @@ const VideoDetailsScreen = ({route}) => {
 
   const viewStyles = {
     ...containerStyles,
-    minHeight: Dimensions.get('window').height,
+    flex: 1,
   };
 
   return (

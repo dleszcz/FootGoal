@@ -4,7 +4,7 @@ import Videos from '../components/Videos/Videos';
 
 const VideosListScreen = () => {
   return (
-    <View>
+    <View style={{flex: 1}}>
       <Videos />
     </View>
   );

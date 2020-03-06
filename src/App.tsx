@@ -36,7 +36,15 @@ const App: React.FC = () => {
         </View>
       ),
       headerRight: () => (
-        <Switch value={isDarkModeEnabled} onValueChange={toggleDarkMode} />
+        <Switch
+          value={isDarkModeEnabled}
+          onValueChange={toggleDarkMode}
+          thumbColor={'#000'}
+          trackColor={{
+            true: '#ccc',
+            false: '#ccc',
+          }}
+        />
       ),
       headerStyle: {
         ...headerStyles,
@@ -54,7 +62,7 @@ const App: React.FC = () => {
 
   return (
     <Provider store={store}>
-      <SafeAreaView style={{height: '100%'}}>
+      <SafeAreaView style={{flex: 1}}>
         <ThemeProvider
           value={{
             isDarkMode,
